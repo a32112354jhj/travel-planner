@@ -1,0 +1,28 @@
+// Prisma Schema 定義檔
+// 文件：https://pris.ly/d/prisma-schema
+
+// -------------------------------------------------------
+// Generator：設定 Prisma Client 程式碼產生器
+// 執行 `npx prisma generate` 後，會產生型別安全的資料庫查詢 API
+// -------------------------------------------------------
+generator client {
+  provider = "prisma-client-js"           // 使用官方 Prisma Client JS 產生器
+}
+
+// -------------------------------------------------------
+// Datasource：資料庫連線設定
+// 連線字串從環境變數 DATABASE_URL 讀取（定義在 .env 檔案中）
+// SQLite 範例：DATABASE_URL="file:./dev.db"
+// -------------------------------------------------------
+datasource db {
+  provider = "sqlite"                     // 使用 SQLite 作為資料庫（輕量、免安裝）
+}
+
+// -------------------------------------------------------
+// User 資料表：儲存使用者基本資訊
+// -------------------------------------------------------
+model User {
+  id    Int    @id @default(autoincrement())  // 主鍵，自動遞增
+  name  String                                // 使用者名稱
+  email String @unique                        // 電子郵件，不可重複
+}
