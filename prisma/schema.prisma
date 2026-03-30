@@ -6,7 +6,7 @@
 // 執行 `npx prisma generate` 後，會產生型別安全的資料庫查詢 API
 // -------------------------------------------------------
 generator client {
-  provider = "prisma-client-js"           // 使用官方 Prisma Client JS 產生器
+  provider = "prisma-client-js"
 }
 
 // -------------------------------------------------------
